@@ -1,9 +1,18 @@
-import type { PropsWithChildren } from "react";
+import { Outlet } from "react-router-dom";
 
-import styles from "./App.module.scss";
+import Header from "@/widgets/header/Header.tsx";
 
-const AppLayout = ({ children }: PropsWithChildren) => {
-  return <div className={styles.layout}>{children}</div>;
+import styles from "./AppLayout.module.scss";
+
+const AppLayout = () => {
+  return (
+    <main className={styles.main}>
+      <Header />
+      <div className={styles.container}>
+        <Outlet />
+      </div>
+    </main>
+  );
 };
 
 export default AppLayout;

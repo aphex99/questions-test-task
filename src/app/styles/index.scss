@@ -1,0 +1,31 @@
+@import "normalize.css";
+
+:root {
+  --white: #ffffff;
+  --active-color: #6A0BFF;
+
+  --bg-color: #f4f4f4;
+  --text-color: #191919;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('./fonts/Manrope-Medium.ttf');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('./fonts/Manrope-SemiBold.ttf');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  color: var(--text-color);
+  font-size: 16px;
+}

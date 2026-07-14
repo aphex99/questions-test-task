@@ -1,15 +1,17 @@
+import { ErrorBoundary } from "react-error-boundary";
 import { RouterProvider } from "react-router-dom";
 
-import { router } from "@/app/providers/router";
-import { StoreProvider } from "@/app/providers/store";
-import AppLayout from "@/app/ui/AppLayout.tsx";
+import ErrorBoundaryFallback from "@/shared/ui/error-boundary/ui/ErrorBoundaryFallback.tsx";
+
+import { router } from "./providers/router";
+import { StoreProvider } from "./providers/store";
 
 function App() {
   return (
     <StoreProvider>
-      <AppLayout>
+      <ErrorBoundary fallback={<ErrorBoundaryFallback />}>
         <RouterProvider router={router} />
-      </AppLayout>
+      </ErrorBoundary>
     </StoreProvider>
   );
 }
