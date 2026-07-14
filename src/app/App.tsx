@@ -1,12 +1,9 @@
-import Questions from "@/pages/questions/Questions.tsx";
+import { RouterProvider } from "react-router-dom";
+
+import { router } from "@/app/providers/router";
 
 function App() {
-  return (
-    <>
-      <Questions />
-      <div id={"don"}></div>
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

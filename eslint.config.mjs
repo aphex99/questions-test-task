@@ -77,22 +77,41 @@ export default [
           ],
         },
       ],
-      "boundaries/element-types": [
+      "boundaries/dependencies": [
         "error",
         {
           default: "disallow",
-          rules: [
-            { from: "app", allow: ["pages", "widgets", "features", "entities", "shared"] },
+          policies: [
+            {
+              from: { element: { type: "app" } },
+              allow: {
+                to: { element: { type: ["pages", "widgets", "features", "entities", "shared"] } },
+              },
+            },
+            {
+              from: { element: { type: "pages" } },
+              allow: [{ to: { element: { type: ["widgets", "features", "entities", "shared"] } } }],
+            },
 
-            { from: "pages", allow: ["widgets", "features", "entities", "shared"] },
+            {
+              from: { element: { type: "widgets" } },
+              allow: [{ to: { element: { type: ["features", "entities", "shared"] } } }],
+            },
 
-            { from: "widgets", allow: ["features", "entities", "shared"] },
+            {
+              from: { element: { type: "features" } },
+              allow: [{ to: { element: { type: ["entities", "shared"] } } }],
+            },
 
-            { from: "features", allow: ["entities", "shared"] },
+            {
+              from: { element: { type: "entities" } },
+              allow: [{ to: { element: { type: "shared" } } }],
+            },
 
-            { from: "entities", allow: ["shared"] },
-
-            { from: "shared", allow: ["shared"] },
+            {
+              from: { element: { type: "shared" } },
+              allow: [{ to: { element: { type: "shared" } } }],
+            },
           ],
         },
       ],
