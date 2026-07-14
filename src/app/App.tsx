@@ -1,11 +1,18 @@
-import Questions from "@/pages/questions/Questions.tsx";
+import { ErrorBoundary } from "react-error-boundary";
+import { RouterProvider } from "react-router-dom";
+
+import ErrorBoundaryFallback from "@/shared/ui/error-boundary/ui/ErrorBoundaryFallback.tsx";
+
+import { router } from "./providers/router";
+import { StoreProvider } from "./providers/store";
 
 function App() {
   return (
-    <>
-      <Questions />
-      <div id={"don"}></div>
-    </>
+    <StoreProvider>
+      <ErrorBoundary fallback={<ErrorBoundaryFallback />}>
+        <RouterProvider router={router} />
+      </ErrorBoundary>
+    </StoreProvider>
   );
 }
 
