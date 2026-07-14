@@ -11,7 +11,7 @@
     "lint:fix": "eslint . --fix",
     "stylelint": "stylelint \"**/*.scss\" --fix",
     "format": "prettier . --write",
-    "check": "pnpm lint:fix && pnpm format",
+    "check": "pnpm lint:fix && pnpm format && pnpm stylelint",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
