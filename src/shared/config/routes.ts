@@ -1,4 +1,4 @@
 export const routes = {
   home: "/",
-  question: (id: string) => `/question/${id}`,
+  question: (id: number) => `/question/${id}`,
 };

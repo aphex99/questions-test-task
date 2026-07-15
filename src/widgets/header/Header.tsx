@@ -1,8 +1,8 @@
-import { HEADER_MENU_ITEMS } from "@/widgets/header/config/headerMenuItems.ts";
-
 import { Logo } from "@/shared/assets";
 import { LogoText } from "@/shared/assets";
-import Button from "@/shared/ui/button/Button.tsx";
+import { Button } from "@/shared/ui";
+
+import { HEADER_MENU_ITEMS } from "./config/headerMenuItems.ts";
 
 import styles from "./Header.module.scss";
 
