@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 
-import Header from "@/widgets/header/Header.tsx";
+import { Header } from "@/widgets";
 
 import styles from "./AppLayout.module.scss";
 

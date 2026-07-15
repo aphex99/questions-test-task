@@ -2,9 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 
 import AppLayout from "@/app/ui/AppLayout.tsx";
 
-import { NotFoundPage } from "@/pages/not-found";
-import { QuestionPage } from "@/pages/question";
-import { QuestionsPage } from "@/pages/questions";
+import { NotFoundPage, QuestionPage, QuestionsPage } from "@/pages";
 
 export const router = createBrowserRouter([
   {

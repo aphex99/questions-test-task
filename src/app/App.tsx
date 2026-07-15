@@ -1,7 +1,7 @@
 import { ErrorBoundary } from "react-error-boundary";
 import { RouterProvider } from "react-router-dom";
 
-import ErrorBoundaryFallback from "@/shared/ui/error-boundary/ui/ErrorBoundaryFallback.tsx";
+import { ErrorBoundaryFallback } from "@/shared/ui";
 
 import { router } from "./providers/router";
 import { StoreProvider } from "./providers/store";
