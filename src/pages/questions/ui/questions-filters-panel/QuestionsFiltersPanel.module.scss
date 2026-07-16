@@ -1,0 +1,12 @@
+.wrapper {
+  width: 100%;
+  max-width: 392px;
+  height: 945px;
+  padding: 24px;
+  background-color: var(--white);
+  border-radius: var(--block-radius);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

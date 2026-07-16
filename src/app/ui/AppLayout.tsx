@@ -4,7 +4,7 @@ import { Header } from "@/widgets";
 
 import styles from "./AppLayout.module.scss";
 
-const AppLayout = () => {
+export const AppLayout = () => {
   return (
     <main className={styles.main}>
       <Header />
@@ -14,5 +14,3 @@ const AppLayout = () => {
     </main>
   );
 };
-
-export default AppLayout;

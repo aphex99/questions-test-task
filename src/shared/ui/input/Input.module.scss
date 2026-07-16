@@ -1,0 +1,30 @@
+.wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  box-sizing: border-box;
+  line-height: 130%;
+  padding: 14px 24px 14px 52px;
+  border: 1px solid var(--gray-light);
+  border-radius: 70px;
+
+  &::placeholder {
+    color: var(--gray-light);
+  }
+
+  &:focus {
+    outline: 1px solid var(--text-color-black);
+  }
+}
+
+.icon {
+  position: absolute;
+  left: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--gray-light);
+}

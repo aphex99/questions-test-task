@@ -1,1 +1,1 @@
-export { default as ErrorMessage } from "./ErrorMessage.tsx";
+export { ErrorMessage } from "./ErrorMessage.tsx";

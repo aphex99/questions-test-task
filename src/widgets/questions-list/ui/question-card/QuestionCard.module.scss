@@ -1,0 +1,35 @@
+.wrapper {
+  // height: 56px;
+  width: 100%;
+  max-width: 764px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px 0 var(--main-shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  padding: 16px 24px;
+  font-size: var(--h3);
+  line-height: var(--line-height-short);
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--marker-color);
+    margin: 0 8px 3px 0;
+  }
+}
+
+.button {
+  width: 24px;
+  height: 24px;
+  margin-right: 24px;
+  background-color: transparent;
+  color: var(--active-color);
+}

@@ -1,10 +1,29 @@
 @import "normalize.css";
 
 :root {
+  // colors
   --white: #fff;
+  --gray-light: #a3a3a3;
   --active-color: #6a0bff;
   --bg-color: #f4f4f4;
-  --text-color: #191919;
+  --text-color-black: #191919;
+  --text-color-additional-black: #303030;
+  --text-color-gray: #474747;
+  --border-line-color: #e8e8e8;
+  --marker-color: #53f;
+  --main-shadow: #6a637610;
+
+  // text
+  --h1: 24px;
+  --h2: 24px;
+  --h3: 20px;
+  --text-small: 14px;
+  --text-button: 18px;
+  --line-height-short: 120%;
+  --line-height-high: 140%;
+
+  // border-radius
+  --block-radius: 24px;
 }
 
 @font-face {
@@ -25,6 +44,7 @@
 
 body {
   font-family: Manrope, sans-serif;
-  color: var(--text-color);
+  color: var(--text-color-black);
+  background-color: var(--bg-color);
   font-size: 16px;
 }

@@ -1,7 +1,4 @@
-import type { Skill } from "@/entities/skill";
-import type { Specialization } from "@/entities/specialization";
-
-import type { Topic, User } from "@/shared/model";
+import type { Skill, Specialization, Topic, User } from "@/shared/model/types";
 
 export interface Question {
   id: number;

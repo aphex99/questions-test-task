@@ -2,7 +2,7 @@ import type { Question } from "@/entities/question";
 
 import { baseApi } from "@/shared/api";
 
-export const questionApi = baseApi.injectEndpoints({
+const questionApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     getQuestion: builder.query<Question, number>({
       query: (id) => ({
