@@ -2,8 +2,6 @@ interface ErrorMessageProps {
   message: string;
 }
 
-const ErrorMessage = ({ message }: ErrorMessageProps) => {
+export const ErrorMessage = ({ message }: ErrorMessageProps) => {
   return <div>{message}</div>;
 };
-
-export default ErrorMessage;

@@ -1,0 +1,38 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 28px;
+  color: var(--text-color-gray);
+  font-size: var(--text-small);
+}
+
+.buttonArrow {
+  background-color: transparent;
+  color: var(--active-color);
+}
+
+.pageButtonsGroup {
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pageButton {
+  background-color: transparent;
+  color: inherit;
+  font-size: var(--text-small);
+}
+
+.pageButtonActive {
+  padding: 2px 6px;
+  background-color: var(--active-color);
+  border-radius: 2px;
+  color: var(--white);
+}
+
+.dots {
+  margin-bottom: 10px;
+  text-align: center;
+}

@@ -1,5 +1,5 @@
-import { Logo } from "@/shared/assets";
-import { LogoText } from "@/shared/assets";
+import { LogoIcon } from "@/shared/assets";
+import { LogoTextIcon } from "@/shared/assets";
 import { Button } from "@/shared/ui";
 
 import { HEADER_MENU_ITEMS } from "./config/headerMenuItems.ts";
@@ -12,8 +12,8 @@ const Header = () => {
       <div className={styles.container}>
         <div className={styles.logoAndMenu}>
           <div className={styles.logoContainer}>
-            <Logo />
-            <LogoText />
+            <LogoIcon />
+            <LogoTextIcon />
           </div>
           <nav>
             <ul className={styles.navList}>

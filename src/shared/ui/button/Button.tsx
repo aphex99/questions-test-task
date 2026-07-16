@@ -9,7 +9,7 @@ interface ButtonProps extends ComponentProps<"button"> {
   className?: string;
 }
 
-const Button = ({ children, className, ...props }: ButtonProps) => {
+export const Button = ({ children, className, ...props }: ButtonProps) => {
   const buttonStyles = className ? clsx(className, styles.button) : styles.button;
   return (
     <button className={buttonStyles} {...props}>
@@ -17,5 +17,3 @@ const Button = ({ children, className, ...props }: ButtonProps) => {
     </button>
   );
 };
-
-export default Button;

@@ -1,5 +1,10 @@
-import type { PaginatedResponse } from "@/features/pagination";
-
 import type { Question } from "@/entities/question";
 
-export type QuestionsResponse = PaginatedResponse<Question>;
+export interface GetQuestionsResponse<T> {
+  total: number;
+  page: number;
+  limit: number;
+  data: T[];
+}
+
+export type QuestionsResponse = GetQuestionsResponse<Question>;

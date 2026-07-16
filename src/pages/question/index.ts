@@ -1,1 +1,1 @@
-export { default as QuestionPage } from "./ui/QuestionPage";
+export { QuestionPage } from "./QuestionPage.tsx";

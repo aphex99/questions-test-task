@@ -1,1 +1,1 @@
-export { default as ErrorBoundaryFallback } from "./ui/ErrorBoundaryFallback.tsx";
+export { ErrorBoundaryFallback } from "./ErrorBoundaryFallback.tsx";
