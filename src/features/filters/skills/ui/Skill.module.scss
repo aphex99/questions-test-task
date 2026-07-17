@@ -1,0 +1,35 @@
+.title {
+  font-size: var(--text-small);
+  line-height: var(--line-height-short);
+  color: var(--text-color-gray);
+  margin: 0 0 8px;
+  padding: 0;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 344px;
+  max-height: 192px;
+  margin: 0;
+  padding: 0;
+  transition: max-height 0.3s ease;
+}
+
+.chipButton {
+  background-color: transparent;
+}
+
+.expanded {
+  max-height: 1000px;
+}
+
+.button {
+  font-size: var(--text-small);
+  color: var(--active-additional-color);
+  background-color: transparent;
+  margin-top: 6px;
+}

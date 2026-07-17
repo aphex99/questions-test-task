@@ -1,2 +1,17 @@
-export { default as questionsFiltersReducer, setPage, setTitle } from "./questionsFiltersSlice.ts";
-export { selectQuestionsFilters, selectTitle } from "./selectors.ts";
+export {
+  default as questionsFiltersReducer,
+  setPage,
+  setSpecialization,
+  setTitle,
+  toggleComplexity,
+  toggleRate,
+  toggleSkill,
+} from "./questionsFiltersSlice.ts";
+export {
+  selectComplexity,
+  selectQuestionsFilters,
+  selectRate,
+  selectSkills,
+  selectSpecializationId,
+  selectTitle,
+} from "./selectors.ts";

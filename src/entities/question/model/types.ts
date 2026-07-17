@@ -1,4 +1,4 @@
-import type { Skill, Specialization, Topic, User } from "@/shared/model/types";
+import type { Skill, Specialization, Topic, User } from "@/shared/types";
 
 export interface Question {
   id: number;

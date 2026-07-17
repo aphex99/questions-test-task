@@ -7,7 +7,7 @@ import { QuestionsList } from "@/widgets";
 import { getErrorMessage } from "@/shared/lib/errors";
 import { useAppDispatch, useAppSelector } from "@/shared/lib/redux";
 import { selectQuestionsFilters, setPage } from "@/shared/model/questionsFilters/model";
-import { EmptyState, ErrorMessage } from "@/shared/ui";
+import { ErrorMessage } from "@/shared/ui";
 
 import styles from "./QuestionsPage.module.scss";
 
@@ -30,10 +30,6 @@ export const QuestionsPage = () => {
     return null;
   }
 
-  if (data && data.data.length === 0) {
-    return <EmptyState title={"No one question found"} />;
-  }
-
   const onChangePage = (page: number) => {
     dispatch(setPage(page));
   };
@@ -43,7 +39,7 @@ export const QuestionsPage = () => {
       <QuestionsList
         limit={COUNT_PER_PAGE}
         page={page}
-        questions={data?.data}
+        data={data.data}
         totalCount={data?.total}
         onChangePage={onChangePage}
       />

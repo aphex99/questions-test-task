@@ -1,0 +1,15 @@
+.wrapper {
+  height: 42px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--border-chip-color);
+  border-radius: 12px;
+  color: var(--text-color-additional-black);
+  box-sizing: border-box;
+}
+
+.active {
+  border-color: var(--active-color);
+}

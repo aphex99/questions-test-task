@@ -5,7 +5,7 @@ export interface QuestionsFiltersState {
   title: string;
 
   specializationId?: number;
-  skills: string[];
+  skills: number[];
 
   complexity: number[];
   rate: number[];

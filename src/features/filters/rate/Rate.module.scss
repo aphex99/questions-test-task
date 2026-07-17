@@ -1,0 +1,25 @@
+.wrapper {
+  width: 100%;
+}
+
+.title {
+  font-size: var(--text-small);
+  line-height: var(--line-height-short);
+  color: var(--text-color-gray);
+  margin: 0 0 8px;
+  padding: 0;
+}
+
+.list {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  max-width: 344px;
+  margin: 0;
+  padding: 0;
+  line-height: var(--line-height-short);
+}
+
+.chipButton {
+  background-color: transparent;
+}
