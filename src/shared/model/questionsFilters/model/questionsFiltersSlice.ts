@@ -1,5 +1,7 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
+import { toggleGroup } from "@/shared/lib/array";
+
 import { questionsFiltersInitialState } from "./constants.ts";
 
 const questionsFiltersSlice = createSlice({
@@ -21,13 +23,8 @@ const questionsFiltersSlice = createSlice({
       state.title = action.payload;
       state.page = 1;
     },
-    toggleComplexity(state, action: PayloadAction<number>) {
-      const value = action.payload;
-      if (state.complexity.includes(value)) {
-        state.complexity = state.complexity.filter((level) => level !== value);
-      } else {
-        state.complexity.push(value);
-      }
+    toggleComplexity(state, action: PayloadAction<number[]>) {
+      state.complexity = toggleGroup(state.complexity, action.payload);
       state.page = 1;
     },
     toggleRate(state, action: PayloadAction<number>) {
@@ -39,7 +36,7 @@ const questionsFiltersSlice = createSlice({
       }
       state.page = 1;
     },
-    toggleSkill(state, action: PayloadAction<string>) {
+    toggleSkill(state, action: PayloadAction<number>) {
       const id = action.payload;
       if (state.skills.includes(id)) {
         state.skills = state.skills.filter((skill) => skill !== id);

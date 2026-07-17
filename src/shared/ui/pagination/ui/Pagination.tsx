@@ -39,7 +39,7 @@ export const Pagination = ({ page, total, limit, setPage }: PaginationProps) => 
           typeof item === "number" ? (
             <Button
               key={item}
-              className={clsx(styles.pageButton, { [styles.pageButtonActive]: index === page })}
+              className={clsx(styles.pageButton, { [styles.pageButtonActive]: item === page })}
               onClick={() => setPage(item)}
             >
               {item}

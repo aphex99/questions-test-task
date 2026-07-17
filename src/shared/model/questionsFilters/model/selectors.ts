@@ -6,7 +6,7 @@ export const selectLimit = (state: AppState) => state.questionsFilters.limit;
 
 export const selectPage = (state: AppState) => state.questionsFilters.page;
 
-export const selectSpecialization = (state: AppState) => state.questionsFilters.specializationId;
+export const selectSpecializationId = (state: AppState) => state.questionsFilters.specializationId;
 
 export const selectTitle = (state: AppState) => state.questionsFilters.title;
 

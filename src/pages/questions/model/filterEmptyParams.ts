@@ -1,10 +1,11 @@
 import type { QuestionsFiltersState } from "@/shared/model/questionsFilters/model/types.ts";
 
 export const filterEmptyParams = (params: QuestionsFiltersState) => {
-  return Object.fromEntries(
-    Object.entries(params).filter(
-      ([_, value]) =>
-        !Array.isArray(value) && value !== null && value !== undefined && value !== "",
-    ),
-  );
+  const isParams = Object.entries(params).filter(([_, value]) => {
+    if (Array.isArray(value)) {
+      return value.length > 0;
+    }
+    return value !== null && value !== undefined && value !== "";
+  });
+  return Object.fromEntries(isParams);
 };
