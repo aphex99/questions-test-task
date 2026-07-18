@@ -17,12 +17,13 @@
   display: flex;
   justify-content: center;
   gap: 10px;
+  color: var(--text-color-gray);
 }
 
 .pageButton {
   background-color: transparent;
-  color: inherit;
   font-size: var(--text-small);
+  color: inherit;
 }
 
 .pageButtonActive {

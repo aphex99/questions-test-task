@@ -1,6 +1,6 @@
 import type { Question } from "@/entities/question";
 
-import { EmptyState, MainCard, Pagination } from "@/shared/ui";
+import { CardWrapper, EmptyState, Pagination } from "@/shared/ui";
 
 import { QuestionCard } from "./question-card";
 
@@ -16,7 +16,7 @@ interface QuestionsListProps {
 
 const QuestionsList = ({ data, limit, page, totalCount, onChangePage }: QuestionsListProps) => {
   return (
-    <MainCard>
+    <CardWrapper>
       <div className={styles.wrapper}>
         <h1 className={styles.mainTitle}>Вопросы React, JavaScript</h1>
 
@@ -44,7 +44,7 @@ const QuestionsList = ({ data, limit, page, totalCount, onChangePage }: Question
           </>
         )}
       </div>
-    </MainCard>
+    </CardWrapper>
   );
 };
 

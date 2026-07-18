@@ -42,16 +42,18 @@ export const Skill = () => {
       <h4 className={styles.title}>Навыки</h4>
       <ul className={clsx(styles.list, { [styles.expanded]: expanded })}>
         {data.data.map((skill) => (
-          <Button
-            key={skill.id}
-            className={styles.chipButton}
-            onClick={() => onToggleSkill(skill.id)}
-          >
-            <FilterChip active={skills.includes(skill.id)}>
-              <SkillIcon title={skill.title} src={skill.imageSrc} />
-              <span>{skill.title}</span>
-            </FilterChip>
-          </Button>
+          <li>
+            <Button
+              key={skill.id}
+              className={styles.chipButton}
+              onClick={() => onToggleSkill(skill.id)}
+            >
+              <FilterChip active={skills.includes(skill.id)}>
+                <SkillIcon title={skill.title} src={skill.imageSrc} />
+                <span>{skill.title}</span>
+              </FilterChip>
+            </Button>
+          </li>
         ))}
       </ul>
       <Button className={styles.button} onClick={() => setExpanded((prev) => !prev)}>

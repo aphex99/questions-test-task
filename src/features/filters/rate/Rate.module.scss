@@ -5,6 +5,7 @@
 .title {
   font-size: var(--text-small);
   line-height: var(--line-height-short);
+  font-weight: var(--text-panel-title-weight);
   color: var(--text-color-gray);
   margin: 0 0 8px;
   padding: 0;
@@ -14,7 +15,6 @@
   display: flex;
   gap: 8px;
   width: 100%;
-  max-width: 344px;
   margin: 0;
   padding: 0;
   line-height: var(--line-height-short);

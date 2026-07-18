@@ -1,5 +1,6 @@
 .title {
   font-size: var(--text-small);
+  font-weight: var(--text-panel-title-weight);
   line-height: var(--line-height-short);
   color: var(--text-color-gray);
   margin: 0 0 8px;
@@ -12,7 +13,6 @@
   gap: 8px 12px;
   overflow: hidden;
   width: 100%;
-  max-width: 344px;
   max-height: 192px;
   margin: 0;
   padding: 0;

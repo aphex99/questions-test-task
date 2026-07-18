@@ -2,6 +2,12 @@
   margin: 25px auto 100px;
 }
 
+.mainContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
 .buttonBack {
   color: var(--active-color);
   display: flex;

@@ -1,4 +1,5 @@
 export { Button } from "./button/index.ts";
+export { CardWrapper } from "./card-wrapper/index.ts";
 export { EmptyState } from "./empty-state/index.ts";
 export { ErrorBoundaryFallback } from "./error-boundary/index.ts";
 export { ErrorMessage } from "./error-message/index.ts";
@@ -7,5 +8,4 @@ export { ImageWrapper } from "./image-wrapper/index.ts";
 export { Input } from "./input/index.ts";
 export { Label } from "./label/index.ts";
 export { LabelsGroup } from "./labels-group/index.ts";
-export { MainCard } from "./main-card/index.ts";
 export { Pagination } from "./pagination/index.ts";

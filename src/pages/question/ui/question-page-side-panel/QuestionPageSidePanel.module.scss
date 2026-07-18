@@ -1,0 +1,100 @@
+.sidePanel {
+  width: 100%;
+  max-width: 392px;
+}
+
+.cardWrapper {
+  box-shadow: none;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.panelTitle {
+  line-height: var(--line-height-short);
+  color: var(--text-color-gray);
+  margin: 0 0 8px 0;
+}
+
+.labelsGroup {
+  gap: 16px;
+}
+
+.skillsList {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.keywordsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 10px;
+  color: var(--active-color);
+}
+
+.keyword {
+  text-transform: capitalize;
+}
+
+.authorWrapper {
+  font-size: var(--text-small);
+}
+
+.author {
+  color: var(--active-color);
+}
+
+.socialLinks {
+  list-style: none;
+  color: var(--active-color);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 12px;
+}
+
+.socialItem {
+  width: 24px;
+  height: 24px;
+}
+
+.adWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--text-color-additional-black);
+  line-height: 130%;
+
+  & p {
+    margin: 0;
+  }
+}
+
+.profileInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nameWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.occupation {
+  color: var(--text-description);
+}
+
+.avatar {
+  width: 45px;
+  border-radius: 50%;
+}

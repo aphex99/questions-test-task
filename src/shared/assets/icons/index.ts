@@ -5,4 +5,7 @@ export { default as ArrowRightIcon } from "./arrow-right.svg?react";
 export { default as ArrowRightCircleIcon } from "./arrow-right-circle.svg?react";
 export { default as DefaultSkillIcon } from "./default-skill.svg?react";
 export { default as DotsVerticalIcon } from "./dots-vertical.svg?react";
+export { default as Profile } from "./profile.svg?react";
 export { default as SearchIcon } from "./search.svg?react";
+export { default as Telegram } from "./telegram.svg?react";
+export { default as Youtube } from "./youtube.svg?react";

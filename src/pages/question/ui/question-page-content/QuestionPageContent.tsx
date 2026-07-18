@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 import { ArrowDownIcon, ArrowLeftIcon } from "@/shared/assets";
 import { ArrowRightIcon } from "@/shared/assets/icons";
-import { Button, MainCard } from "@/shared/ui";
+import { Button, CardWrapper } from "@/shared/ui";
 
 import type { UseQuestionNavigationReturn } from "../../model/useQuestionNavigation.ts";
 
@@ -30,13 +30,13 @@ export const QuestionPageContent = ({
 
   return (
     <section className={styles.wrapper}>
-      <MainCard className={styles.headingCard}>
+      <CardWrapper className={styles.headingCard}>
         <div className={styles.headingWrapper}>
           <h1 className={styles.mainTitle}>{title}</h1>
           <p className={styles.description}>{description}</p>
         </div>
-      </MainCard>
-      <MainCard>
+      </CardWrapper>
+      <CardWrapper>
         <div className={styles.buttonsGroup}>
           <Button
             className={styles.swipeQuestionButton}
@@ -51,28 +51,30 @@ export const QuestionPageContent = ({
             <ArrowRightIcon />
           </Button>
         </div>
-      </MainCard>
-      <MainCard>
-        <h2 className={styles.shortAnswerTitle}>Краткий ответ</h2>
+      </CardWrapper>
+      <CardWrapper>
+        <h2 className={styles.answerTitle}>Краткий ответ</h2>
         <div className={styles.answer} dangerouslySetInnerHTML={{ __html: shortAnswer }}></div>
-      </MainCard>
-      <MainCard className={styles.longAnswerCard}>
-        <h2>Развёрнутый ответ</h2>
+      </CardWrapper>
+
+      <CardWrapper className={styles.longAnswerCard}>
+        <h2 className={styles.answerTitle}>Развёрнутый ответ</h2>
         <div
-          className={clsx(styles.answer, styles.lognAnswer, {
+          className={clsx(styles.answer, styles.longAnswer, {
             [styles.longAnswerExpanded]: expanded,
           })}
           dangerouslySetInnerHTML={{ __html: longAnswer }}
         ></div>
-        {!expanded && (
-          <div className={styles.overlay}>
-            <Button onClick={() => setExpanded((prev) => !prev)}>
-              <span>Развернуть</span>
-              <ArrowDownIcon />
-            </Button>
-          </div>
-        )}
-      </MainCard>
+        <div className={styles.overlay}>
+          <Button
+            className={clsx(styles.buttonExpand, { [styles.buttonExpandActive]: expanded })}
+            onClick={() => setExpanded((prev) => !prev)}
+          >
+            <span>Развернуть</span>
+            <ArrowDownIcon />
+          </Button>
+        </div>
+      </CardWrapper>
     </section>
   );
 };

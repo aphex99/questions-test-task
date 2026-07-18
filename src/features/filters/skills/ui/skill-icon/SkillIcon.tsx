@@ -13,7 +13,7 @@ export const SkillIcon = ({ src, title }: SkillIconProps) => {
   const [hasError, setHasError] = useState(false);
 
   if (title) {
-    return <DefaultSkillIcon title={title} />;
+    return <DefaultSkillIcon />;
   }
 
   // a lot of errors
