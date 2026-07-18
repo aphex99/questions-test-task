@@ -8,15 +8,9 @@ const questionsFiltersSlice = createSlice({
   name: "questionsFilters",
   initialState: questionsFiltersInitialState,
   reducers: {
-    setLimit(state, action: PayloadAction<number>) {
-      state.limit = action.payload;
-      state.page = 1;
-    },
-    setPage(state, action: PayloadAction<number>) {
-      state.page = action.payload;
-    },
     setSpecialization(state, action: PayloadAction<number | undefined>) {
-      state.specializationId = action.payload;
+      state.specializationId =
+        action.payload === state.specializationId ? undefined : action.payload;
       state.page = 1;
     },
     setTitle(state, action: PayloadAction<string>) {
@@ -45,21 +39,10 @@ const questionsFiltersSlice = createSlice({
       }
       state.page = 1;
     },
-    resetFilters() {
-      return questionsFiltersInitialState;
-    },
   },
 });
 
-export const {
-  setLimit,
-  setPage,
-  setSpecialization,
-  setTitle,
-  toggleComplexity,
-  toggleRate,
-  toggleSkill,
-  resetFilters,
-} = questionsFiltersSlice.actions;
+export const { setSpecialization, setTitle, toggleComplexity, toggleRate, toggleSkill } =
+  questionsFiltersSlice.actions;
 
 export default questionsFiltersSlice.reducer;

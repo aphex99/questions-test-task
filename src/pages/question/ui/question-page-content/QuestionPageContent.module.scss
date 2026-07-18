@@ -1,0 +1,76 @@
+.wrapper {
+  margin: 24px auto 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.headingCard {
+  min-height: 208px;
+}
+
+.headingWrapper {
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+.mainTitle {
+  font-size: var(--h1);
+  line-height: var(--line-height-short);
+  color: var(--text-color-additional-black);
+  padding: 0;
+  margin: 0 0 12px;
+}
+
+.description {
+  margin: 0;
+  line-height: 130%;
+  color: var(--text-color-gray);
+}
+
+.buttonsGroup {
+  margin: 4px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.swipeQuestionButton {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.shortAnswerTitle {
+  font-size: var(--h2);
+  margin: 0 0 20px;
+}
+
+.answer {
+  p {
+    margin: 0;
+    line-height: var(--line-height-high);
+    color: var(--text-color-gray);
+  }
+
+  pre {
+    overflow-x: auto;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #fafafa;
+    font-size: var(--text-small);
+  }
+
+  code {
+    font-family: monospace;
+  }
+}
+
+.longAnswerCard {
+  max-height: 785px;
+  overflow: hidden;
+  position: relative;
+}

@@ -1,0 +1,61 @@
+import { Navigate, useNavigate, useParams } from "react-router-dom";
+
+import { ArrowLeftIcon } from "@/shared/assets";
+import { getErrorMessage } from "@/shared/lib/errors";
+import { Button, EmptyState, ErrorMessage } from "@/shared/ui";
+
+import { useGetQuestionQuery } from "../api/questionApi.ts";
+import { useQuestionNavigation } from "../model/useQuestionNavigation.ts";
+import { QuestionPageContent } from "../ui/question-page-content";
+
+import styles from "./Question.module.scss";
+
+export const QuestionPage = () => {
+  const { id } = useParams();
+  const questionId = Number(id);
+
+  const navigate = useNavigate();
+
+  if (!id || Number.isNaN(questionId)) {
+    return <Navigate to={"/questions"} replace />;
+  }
+
+  const { data, error, isLoading } = useGetQuestionQuery(questionId);
+  const navigation = useQuestionNavigation();
+
+  const navigateBack = () => {
+    navigate(-1);
+  };
+
+  if (isLoading) {
+    return <h1>Loading...</h1>;
+  }
+
+  if (error) {
+    return <ErrorMessage message={getErrorMessage(error)} />;
+  }
+
+  if (data && !data.title) {
+    return <EmptyState title={"The question wasn't found"} />;
+  }
+
+  if (!data) {
+    return;
+  }
+
+  return (
+    <div className={styles.wrapper}>
+      <Button className={styles.buttonBack} onClick={navigateBack}>
+        <ArrowLeftIcon />
+        <span>Назад</span>
+      </Button>
+      <QuestionPageContent
+        description={data.description}
+        longAnswer={data.longAnswer}
+        navigation={navigation}
+        shortAnswer={data.shortAnswer}
+        title={data.title}
+      />
+    </div>
+  );
+};

@@ -2,10 +2,6 @@ import type { AppState } from "@/app/providers/store";
 
 export const selectQuestionsFilters = (state: AppState) => state.questionsFilters;
 
-export const selectLimit = (state: AppState) => state.questionsFilters.limit;
-
-export const selectPage = (state: AppState) => state.questionsFilters.page;
-
 export const selectSpecializationId = (state: AppState) => state.questionsFilters.specializationId;
 
 export const selectTitle = (state: AppState) => state.questionsFilters.title;

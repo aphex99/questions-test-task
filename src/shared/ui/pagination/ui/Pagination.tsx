@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-import { ArrowLeftIcon, ArrowRightIcon } from "@/shared/assets";
+import { ArrowLeftCircleIcon, ArrowRightCircleIcon } from "@/shared/assets";
 import { Button } from "@/shared/ui";
 
 import { generatePagination } from "../lib/generatePagination.ts";
@@ -31,7 +31,7 @@ export const Pagination = ({ page, total, limit, setPage }: PaginationProps) => 
         disabled={page === 1}
         onClick={() => setPage(page - 1)}
       >
-        <ArrowLeftIcon />
+        <ArrowLeftCircleIcon />
       </Button>
 
       <div className={styles.pageButtonsGroup}>
@@ -57,7 +57,7 @@ export const Pagination = ({ page, total, limit, setPage }: PaginationProps) => 
         disabled={page === pages}
         onClick={() => setPage(page + 1)}
       >
-        <ArrowRightIcon />
+        <ArrowRightCircleIcon />
       </Button>
     </div>
   );

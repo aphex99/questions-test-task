@@ -1,11 +1,12 @@
+export type { QuestionsFiltersState } from "./model/index.ts";
 export {
-  default as questionsFiltersReducer,
+  questionsFiltersReducer,
   setSpecialization,
   setTitle,
   toggleComplexity,
   toggleRate,
   toggleSkill,
-} from "./questionsFiltersSlice.ts";
+} from "./model/index.ts";
 export {
   selectComplexity,
   selectQuestionsFilters,
@@ -13,5 +14,4 @@ export {
   selectSkills,
   selectSpecializationId,
   selectTitle,
-} from "./selectors.ts";
-export type { QuestionsFiltersState } from "./types.ts";
+} from "./model/index.ts";

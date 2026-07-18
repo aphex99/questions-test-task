@@ -10,7 +10,7 @@ import { Button, ErrorMessage, FilterChip } from "@/shared/ui";
 
 import { useGetSkillsQuery } from "../api/skillsApi.ts";
 
-import { SkillIcon } from "./SkillIcon";
+import { SkillIcon } from "./skill-icon/SkillIcon.tsx";
 
 import styles from "./Skill.module.scss";
 
