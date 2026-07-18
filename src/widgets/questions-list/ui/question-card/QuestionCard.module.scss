@@ -15,7 +15,7 @@
 
 .title {
   margin: 0;
-  font-size: var(--h3);
+  font-size: var(--h2);
   line-height: var(--line-height-short);
 
   &::before {
@@ -52,8 +52,16 @@
   gap: 24px;
 }
 
-.labelsGroup {
+.labelsContainer {
   margin-top: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttonDots {
+  max-height: 15px;
+  background-color: transparent;
 }
 
 .shortAnswer {

@@ -10,6 +10,7 @@
   --text-color-black: #191919;
   --text-color-additional-black: #303030;
   --text-color-gray: #474747;
+  --text-description: #757575;
   --border-line-color: #e8e8e8;
   --border-chip-color: #bababa;
   --marker-color: #53f;
@@ -24,8 +25,18 @@
   --line-height-short: 120%;
   --line-height-high: 140%;
 
+  --text-panel-title-weight: 400;
+
   // border-radius
   --block-radius: 24px;
+}
+
+@font-face {
+  font-family: Manrope;
+  src: url("./fonts/Manrope-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {

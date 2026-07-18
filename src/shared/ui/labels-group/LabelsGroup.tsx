@@ -8,13 +8,23 @@ interface LabelsGroupProps {
   rate?: number;
   complexity?: number;
   className?: string;
+  reverse?: boolean;
 }
 
-export const LabelsGroup = ({ rate, complexity, className }: LabelsGroupProps) => {
+export const LabelsGroup = ({ rate, complexity, className, reverse }: LabelsGroupProps) => {
   return (
     <div className={clsx(styles.wrapper, className)}>
-      {rate && <Label title={"Рейтинг"} value={rate} />}
-      {complexity && <Label title={"Сложность"} value={complexity} />}
+      {reverse ? (
+        <>
+          {complexity && <Label title={"Сложность"} value={complexity} />}
+          {rate && <Label title={"Рейтинг"} value={rate} />}
+        </>
+      ) : (
+        <>
+          {rate && <Label title={"Рейтинг"} value={rate} />}
+          {complexity && <Label title={"Сложность"} value={complexity} />}
+        </>
+      )}
     </div>
   );
 };

@@ -1,18 +1,19 @@
 .title {
   font-size: var(--text-small);
   line-height: var(--line-height-short);
+  font-weight: var(--text-panel-title-weight);
   color: var(--text-color-gray);
   margin: 0 0 8px;
   padding: 0;
 }
 
 .list {
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 8px 12px;
   overflow: hidden;
   width: 100%;
-  max-width: 344px;
   max-height: 192px;
   margin: 0;
   padding: 0;
