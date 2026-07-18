@@ -1,4 +1,4 @@
-import type { QuestionsFiltersState } from "@/shared/model/questionsFilters/model/types.ts";
+import type { QuestionsFiltersState } from "@/shared/model/questionsFilters";
 
 export const filterEmptyParams = (params: QuestionsFiltersState) => {
   const isParams = Object.entries(params).filter(([_, value]) => {

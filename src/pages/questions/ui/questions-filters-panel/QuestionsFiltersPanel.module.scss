@@ -1,7 +1,7 @@
 .wrapper {
   width: 100%;
   max-width: 392px;
-  min-height: 945px;
+  min-height: max-content;
   padding: 24px;
   background-color: var(--white);
   border-radius: var(--block-radius);

@@ -1,6 +1,6 @@
 import type { Question } from "@/entities/question";
 
-import { EmptyState, Pagination } from "@/shared/ui";
+import { EmptyState, MainCard, Pagination } from "@/shared/ui";
 
 import { QuestionCard } from "./question-card";
 
@@ -16,24 +16,35 @@ interface QuestionsListProps {
 
 const QuestionsList = ({ data, limit, page, totalCount, onChangePage }: QuestionsListProps) => {
   return (
-    <div className={styles.wrapper}>
-      <h1 className={styles.mainTitle}>Вопросы React, JavaScript</h1>
+    <MainCard>
+      <div className={styles.wrapper}>
+        <h1 className={styles.mainTitle}>Вопросы React, JavaScript</h1>
 
-      {data.length === 0 ? (
-        <EmptyState title={"No one question found"} />
-      ) : (
-        <>
-          <ul className={styles.list}>
-            {data.map((question) => (
-              <li key={question.id} className={styles.item}>
-                <QuestionCard title={question.title} />
-              </li>
-            ))}
-          </ul>
-          <Pagination page={page} limit={limit} total={totalCount} setPage={onChangePage} />
-        </>
-      )}
-    </div>
+        {data.length === 0 ? (
+          <EmptyState title={"No one question found"} />
+        ) : (
+          <>
+            <ul className={styles.list}>
+              {data.map((question) => (
+                <li key={question.id} className={styles.item}>
+                  <QuestionCard
+                    complexity={question.complexity}
+                    page={page}
+                    rate={question.rate}
+                    title={question.title}
+                    imageSrc={question.imageSrc}
+                    shortAnswer={question.shortAnswer}
+                    id={question.id}
+                  />
+                </li>
+              ))}
+            </ul>
+
+            <Pagination page={page} limit={limit} total={totalCount} setPage={onChangePage} />
+          </>
+        )}
+      </div>
+    </MainCard>
   );
 };
 

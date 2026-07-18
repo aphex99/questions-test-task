@@ -1,0 +1,12 @@
+.wrapper {
+  margin: 25px auto 100px;
+}
+
+.buttonBack {
+  color: var(--active-color);
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  gap: 4px;
+  height: 27px;
+}

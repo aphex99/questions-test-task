@@ -22,4 +22,4 @@ export const questionsApi = baseApi.injectEndpoints({
   }),
 });
 
-export const { useGetQuestionsQuery } = questionsApi;
+export const { useGetQuestionsQuery, useLazyGetQuestionsQuery } = questionsApi;
