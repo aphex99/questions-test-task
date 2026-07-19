@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 import { ArrowDownIcon, ArrowLeftIcon } from "@/shared/assets";
 import { ArrowRightIcon } from "@/shared/assets/icons";
-import { Button, CardWrapper } from "@/shared/ui";
+import { Button, CardWrapper, ImageWrapper } from "@/shared/ui";
 
 import type { UseQuestionNavigationReturn } from "../../model/useQuestionNavigation.ts";
 
@@ -31,7 +31,12 @@ export const QuestionPageContent = ({
   return (
     <section className={styles.wrapper}>
       <CardWrapper className={styles.headingCard}>
-        <div className={styles.headingWrapper}>
+        <ImageWrapper
+          questionLogo={true}
+          title={"question's logo image"}
+          className={styles.headingImage}
+        />
+        <div className={styles.textContainer}>
           <h1 className={styles.mainTitle}>{title}</h1>
           <p className={styles.description}>{description}</p>
         </div>

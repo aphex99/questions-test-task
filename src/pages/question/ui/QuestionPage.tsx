@@ -5,6 +5,7 @@ import { QuestionPageSidePanel } from "@/pages/question/ui/question-page-side-pa
 import { ArrowLeftIcon } from "@/shared/assets";
 import { getErrorMessage } from "@/shared/lib/errors";
 import { Button, EmptyState, ErrorMessage } from "@/shared/ui";
+import { SkeletonOneQuestionPage } from "@/shared/ui/skeletons/skeleton-one-question-page";
 
 import { useGetQuestionQuery } from "../api/questionApi.ts";
 import { useQuestionNavigation } from "../model/useQuestionNavigation.ts";
@@ -12,7 +13,7 @@ import { QuestionPageContent } from "../ui/question-page-content";
 
 import styles from "./QuestionPage.module.scss";
 
-export const QuestionPage = () => {
+const QuestionPage = () => {
   const { id } = useParams();
   const questionId = Number(id);
 
@@ -30,7 +31,7 @@ export const QuestionPage = () => {
   };
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <SkeletonOneQuestionPage />;
   }
 
   if (error) {
@@ -87,3 +88,5 @@ export const QuestionPage = () => {
     </div>
   );
 };
+
+export default QuestionPage;

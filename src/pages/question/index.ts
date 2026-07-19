@@ -1,1 +1,1 @@
-export { QuestionPage } from "./ui/QuestionPage.tsx";
+export { default } from "./ui/QuestionPage.tsx";

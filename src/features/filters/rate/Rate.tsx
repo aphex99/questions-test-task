@@ -23,7 +23,9 @@ export const Rate = ({ resetPage }: RateProps) => {
       <ul className={styles.list}>
         {RATE_STATS.map((rate) => (
           <Button key={rate} className={styles.chipButton} onClick={() => onToggleRate(rate)}>
-            <FilterChip active={stats.includes(rate)}>{rate}</FilterChip>
+            <FilterChip className={styles.filterChip} active={stats.includes(rate)}>
+              {rate}
+            </FilterChip>
           </Button>
         ))}
       </ul>

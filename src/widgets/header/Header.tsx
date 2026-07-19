@@ -10,14 +10,18 @@ const Header = () => {
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <div className={styles.logoAndMenu}>
-          <div className={styles.logoContainer}>
+          <a href={"/"} className={styles.logoContainer}>
             <Logo />
             <LogoText />
-          </div>
+          </a>
           <nav>
             <ul className={styles.navList}>
               {HEADER_MENU_ITEMS.map((item) => (
-                <li key={item}>{item}</li>
+                <li key={item}>
+                  <a href="#" className={styles.link}>
+                    {item}
+                  </a>
+                </li>
               ))}
             </ul>
           </nav>

@@ -23,3 +23,9 @@
 .chipButton {
   background-color: transparent;
 }
+
+.filterChip {
+  &:hover {
+    border-color: var(--active-color);
+  }
+}

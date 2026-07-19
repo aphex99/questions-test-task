@@ -1,4 +1,4 @@
-import { SkillIcon } from "@/features/filters/skills/ui/skill-icon";
+import { SkillIcon } from "@/features/filters/skill/ui/skill-icon";
 
 import type { Skill } from "@/shared/types";
 import { CardWrapper, FilterChip, ImageWrapper, LabelsGroup } from "@/shared/ui";

@@ -7,11 +7,15 @@
 
 .headingCard {
   min-height: 208px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
 
-.headingWrapper {
-  max-width: 430px;
-  margin: 0 auto;
+.headingImage {
+  width: 100%;
+  max-width: 160px;
+  height: 160px;
 }
 
 .mainTitle {

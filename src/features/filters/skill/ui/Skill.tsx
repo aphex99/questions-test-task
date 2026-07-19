@@ -7,6 +7,7 @@ import { useAppDispatch, useAppSelector } from "@/shared/lib/redux";
 import { toggleSkill } from "@/shared/model/questionsFilters/model";
 import { selectSkills } from "@/shared/model/questionsFilters/model";
 import { Button, ErrorMessage, FilterChip } from "@/shared/ui";
+import { SkeletonFilterChips } from "@/shared/ui/skeletons";
 
 import { useGetSkillsQuery } from "../api/skillsApi.ts";
 
@@ -18,7 +19,7 @@ interface SkillProps {
   resetPage: () => void;
 }
 
-export const Skill = ({ resetPage }: SkillProps) => {
+const Skill = ({ resetPage }: SkillProps) => {
   const skills = useAppSelector(selectSkills);
   const dispatch = useAppDispatch();
 
@@ -26,7 +27,7 @@ export const Skill = ({ resetPage }: SkillProps) => {
   const { data, error, isLoading, refetch } = useGetSkillsQuery();
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <SkeletonFilterChips />;
   }
 
   if (error) {
@@ -53,7 +54,7 @@ export const Skill = ({ resetPage }: SkillProps) => {
                   className={styles.chipButton}
                   onClick={() => onToggleSkill(skill.id)}
                 >
-                  <FilterChip active={skills.includes(skill.id)}>
+                  <FilterChip className={styles.filterChip} active={skills.includes(skill.id)}>
                     <SkillIcon title={skill.title} src={skill.imageSrc} />
                     <span>{skill.title}</span>
                   </FilterChip>
@@ -69,3 +70,5 @@ export const Skill = ({ resetPage }: SkillProps) => {
     </div>
   );
 };
+
+export default Skill;

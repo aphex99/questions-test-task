@@ -27,7 +27,9 @@ export const Complexity = ({ resetPage }: ComplexityProps) => {
             className={styles.chipButton}
             onClick={() => onToggleComplexity(level.values)}
           >
-            <FilterChip active={levels.includes(level.values[0])}>{level.label}</FilterChip>
+            <FilterChip className={styles.filterChip} active={levels.includes(level.values[0])}>
+              {level.label}
+            </FilterChip>
           </Button>
         ))}
       </ul>
