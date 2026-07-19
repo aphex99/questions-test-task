@@ -1,8 +1,9 @@
+import { COUNT_PER_PAGE } from "@/pages/questions/config/consts.ts";
+
 import type { QuestionsFiltersState } from "./types.ts";
 
 export const questionsFiltersInitialState: QuestionsFiltersState = {
-  page: 1,
-  limit: 10,
+  limit: COUNT_PER_PAGE,
 
   title: "",
 

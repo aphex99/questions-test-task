@@ -26,16 +26,16 @@ export const QuestionPageSidePanel = ({
     <div className={styles.sidePanel}>
       <CardWrapper className={styles.cardWrapper}>
         <div>
-          <p className={styles.panelTitle}>Уровень:</p>
+          <h4 className={styles.panelTitle}>Уровень:</h4>
           <LabelsGroup
             className={styles.labelsGroup}
             complexity={complexity}
+            order={["complexity", "rate"]}
             rate={rate}
-            reverse={true}
           />
         </div>
         <div>
-          <p className={styles.panelTitle}>Навыки:</p>
+          <h4 className={styles.panelTitle}>Навыки:</h4>
           <ul className={styles.skillsList}>
             {questionSkills.map((skill) => (
               <li key={skill.id}>
@@ -48,7 +48,7 @@ export const QuestionPageSidePanel = ({
           </ul>
         </div>
         <div>
-          <p className={styles.panelTitle}>Ключивые слова:</p>
+          <h4 className={styles.panelTitle}>Ключивые слова:</h4>
           <ul className={styles.keywordsList}>
             {keywords.map((keyword) => (
               <li key={keyword}>

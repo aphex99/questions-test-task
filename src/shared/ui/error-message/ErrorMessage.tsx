@@ -1,7 +1,23 @@
+import { Button } from "@/shared/ui";
+
 interface ErrorMessageProps {
-  message: string;
+  message?: string;
+  onRetry?: () => void;
+  title?: string;
 }
 
-export const ErrorMessage = ({ message }: ErrorMessageProps) => {
-  return <div>{message}</div>;
+import styles from "./ErrorMessage.module.scss";
+
+export const ErrorMessage = ({ message, title, onRetry }: ErrorMessageProps) => {
+  return (
+    <div className={styles.wrapper}>
+      <h2 className={styles.title}>{title}</h2>
+      {message && <p className={styles.text}>{message}</p>}
+      {onRetry && (
+        <Button className={styles.button} onClick={onRetry}>
+          Retry
+        </Button>
+      )}
+    </div>
+  );
 };

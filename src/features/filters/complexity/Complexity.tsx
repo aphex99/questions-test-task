@@ -5,13 +5,16 @@ import { selectComplexity, toggleComplexity } from "@/shared/model/questionsFilt
 import { Button, FilterChip } from "@/shared/ui";
 
 import styles from "./Complexity.module.scss";
-
-export const Complexity = () => {
+interface ComplexityProps {
+  resetPage: () => void;
+}
+export const Complexity = ({ resetPage }: ComplexityProps) => {
   const levels = useAppSelector(selectComplexity);
   const dispatch = useAppDispatch();
 
   const onToggleComplexity = (complexity: number[]) => {
     dispatch(toggleComplexity(complexity));
+    resetPage();
   };
 
   return (

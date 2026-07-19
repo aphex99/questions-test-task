@@ -6,7 +6,9 @@ import type { PaginatedResponse } from "@/shared/types";
 
 import { filterEmptyParams } from "../model/filterEmptyParams.ts";
 
-type GetQuestionsParams = QuestionsFiltersState;
+type GetQuestionsParams = QuestionsFiltersState & {
+  page: number;
+};
 
 export const questionsApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({

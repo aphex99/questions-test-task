@@ -11,15 +11,12 @@ const questionsFiltersSlice = createSlice({
     setSpecialization(state, action: PayloadAction<number | undefined>) {
       state.specializationId =
         action.payload === state.specializationId ? undefined : action.payload;
-      state.page = 1;
     },
     setTitle(state, action: PayloadAction<string>) {
       state.title = action.payload;
-      state.page = 1;
     },
     toggleComplexity(state, action: PayloadAction<number[]>) {
       state.complexity = toggleGroup(state.complexity, action.payload);
-      state.page = 1;
     },
     toggleRate(state, action: PayloadAction<number>) {
       const value = action.payload;
@@ -28,7 +25,6 @@ const questionsFiltersSlice = createSlice({
       } else {
         state.rate.push(value);
       }
-      state.page = 1;
     },
     toggleSkill(state, action: PayloadAction<number>) {
       const id = action.payload;
@@ -37,12 +33,20 @@ const questionsFiltersSlice = createSlice({
       } else {
         state.skills.push(id);
       }
-      state.page = 1;
+    },
+    resetFilters(state) {
+      return { ...questionsFiltersInitialState, limit: state.limit };
     },
   },
 });
 
-export const { setSpecialization, setTitle, toggleComplexity, toggleRate, toggleSkill } =
-  questionsFiltersSlice.actions;
+export const {
+  resetFilters,
+  setSpecialization,
+  setTitle,
+  toggleComplexity,
+  toggleRate,
+  toggleSkill,
+} = questionsFiltersSlice.actions;
 
 export default questionsFiltersSlice.reducer;

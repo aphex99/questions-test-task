@@ -5,13 +5,16 @@ import { Button, FilterChip } from "@/shared/ui";
 import { RATE_STATS } from "./config/constants.ts";
 
 import styles from "./Rate.module.scss";
-
-export const Rate = () => {
+interface RateProps {
+  resetPage: () => void;
+}
+export const Rate = ({ resetPage }: RateProps) => {
   const stats = useAppSelector(selectRate);
   const dispatch = useAppDispatch();
 
   const onToggleRate = (rate: number) => {
     dispatch(toggleRate(rate));
+    resetPage();
   };
 
   return (

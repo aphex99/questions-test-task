@@ -1,5 +1,4 @@
 export interface QuestionsFiltersState {
-  page: number;
   limit: number;
 
   title: string;
