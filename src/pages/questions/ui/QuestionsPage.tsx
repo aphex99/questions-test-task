@@ -19,18 +19,24 @@ export const QuestionsPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const page = Number(searchParams.get("page")) || 1;
 
-  const { data, error, isLoading } = useGetQuestionsQuery({ ...filters, page });
+  const { data, error, isLoading, refetch } = useGetQuestionsQuery({ ...filters, page });
 
   if (isLoading) {
     return <h1>Loading...</h1>;
   }
 
   if (error) {
-    return <ErrorMessage message={getErrorMessage(error)} />;
+    return <ErrorMessage title={getErrorMessage(error)} onRetry={refetch} />;
   }
 
   if (!data) {
-    return null;
+    return (
+      <ErrorMessage
+        title={"Something went wrong"}
+        message={"No data received."}
+        onRetry={refetch}
+      />
+    );
   }
 
   const onChangePage = (page: number) => {

@@ -1,6 +1,7 @@
 export type { QuestionsFiltersState } from "./model/index.ts";
 export {
   questionsFiltersReducer,
+  resetFilters,
   setSpecialization,
   setTitle,
   toggleComplexity,

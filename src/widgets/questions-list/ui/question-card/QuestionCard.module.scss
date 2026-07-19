@@ -4,17 +4,20 @@
   border-radius: 8px;
   box-shadow: 0 4px 10px 0 var(--main-shadow);
   box-sizing: border-box;
-  padding: 16px 24px;
 }
 
-.headingWrapper {
+.buttonHeading {
+  width: 100%;
+  background-color: transparent;
+  padding: 16px 0 16px 40px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  box-sizing: border-box;
 }
 
 .title {
-  margin: 0;
+  margin: 0 24px 0 0;
+  text-align: left;
   font-size: var(--h2);
   line-height: var(--line-height-short);
 
@@ -29,15 +32,12 @@
   }
 }
 
-.buttonArrow {
+.arrowIcon {
   width: 24px;
   height: 24px;
+  flex-shrink: 0;
   margin-right: 24px;
-  background-color: transparent;
   color: var(--active-color);
-}
-
-.arrowIcon {
   transition: transform 0.3s ease;
 }
 
@@ -46,6 +46,8 @@
 }
 
 .content {
+  margin-top: 8px;
+  padding: 0 24px 24px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -53,7 +55,6 @@
 }
 
 .labelsContainer {
-  margin-top: 24px;
   width: 100%;
   display: flex;
   justify-content: space-between;

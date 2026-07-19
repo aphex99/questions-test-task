@@ -22,11 +22,11 @@ export const QuestionPage = () => {
     return <Navigate to={"/questions"} replace />;
   }
 
-  const { data, error, isLoading } = useGetQuestionQuery(questionId);
+  const { data, error, isLoading, refetch } = useGetQuestionQuery(questionId);
   const navigation = useQuestionNavigation();
 
   const navigateBack = () => {
-    navigate(-1);
+    navigate(`/?page=${navigation.currentPage}`);
   };
 
   if (isLoading) {
@@ -42,7 +42,13 @@ export const QuestionPage = () => {
   }
 
   if (!data) {
-    return;
+    return (
+      <ErrorMessage
+        title={"Something went wrong"}
+        message={"No data received."}
+        onRetry={refetch}
+      />
+    );
   }
 
   return (
@@ -52,20 +58,31 @@ export const QuestionPage = () => {
         <span>Назад</span>
       </Button>
       <div className={styles.mainContainer}>
-        <QuestionPageContent
-          description={data.description}
-          longAnswer={data.longAnswer}
-          navigation={navigation}
-          shortAnswer={data.shortAnswer}
-          title={data.title}
-        />
-        <QuestionPageSidePanel
-          questionSkills={data.questionSkills}
-          rate={data.rate}
-          complexity={data.complexity}
-          username={data.createdBy.username}
-          keywords={data.keywords}
-        />
+        {!data.title ? (
+          <EmptyState
+            title={"Вопрос не найден"}
+            message={"Выберите другой вопрос"}
+            isOneQuestion={true}
+            className={styles.emptyStateCard}
+          />
+        ) : (
+          <>
+            <QuestionPageContent
+              description={data.description}
+              longAnswer={data.longAnswer}
+              navigation={navigation}
+              shortAnswer={data.shortAnswer}
+              title={data.title}
+            />
+            <QuestionPageSidePanel
+              questionSkills={data.questionSkills}
+              rate={data.rate}
+              complexity={data.complexity}
+              username={data.createdBy.username}
+              keywords={data.keywords}
+            />
+          </>
+        )}
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 export {
   default as questionsFiltersReducer,
+  resetFilters,
   setSpecialization,
   setTitle,
   toggleComplexity,

@@ -7,6 +7,7 @@ import { useAppSelector } from "@/shared/lib/redux";
 import { selectQuestionsFilters } from "@/shared/model/questionsFilters";
 
 export interface UseQuestionNavigationReturn {
+  currentPage: number;
   goNext: () => Promise<void>;
   goPrevious: () => Promise<void>;
   isFirstQuestion: boolean;
@@ -79,5 +80,5 @@ export const useQuestionNavigation = (): UseQuestionNavigationReturn => {
     navigate(`/questions/${lastQuestion.id}?page=${currentPage - 1}`);
   };
 
-  return { goNext, goPrevious, isFirstQuestion, isLastQuestion };
+  return { goNext, goPrevious, isFirstQuestion, isLastQuestion, currentPage };
 };

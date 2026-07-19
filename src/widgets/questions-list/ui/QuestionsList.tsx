@@ -21,7 +21,11 @@ const QuestionsList = ({ data, limit, page, totalCount, onChangePage }: Question
         <h1 className={styles.mainTitle}>Вопросы React, JavaScript</h1>
 
         {data.length === 0 ? (
-          <EmptyState title={"No one question found"} />
+          <EmptyState
+            title={"Вопросы не найдены"}
+            message={"Измените фильтры или сбросьте их"}
+            resetSearchFilters={true}
+          />
         ) : (
           <>
             <ul className={styles.list}>
