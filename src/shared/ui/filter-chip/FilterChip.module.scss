@@ -9,6 +9,7 @@
   line-height: var(--line-height-short);
   color: var(--text-color-additional-black);
   box-sizing: border-box;
+  transition: border-color 0.5s ease;
 }
 
 .active {

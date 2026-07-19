@@ -7,8 +7,11 @@ import styles from "./FilterChip.module.scss";
 interface FilterChipProps {
   active?: boolean;
   children: ReactNode;
+  className?: string;
 }
 
-export const FilterChip = ({ children, active }: FilterChipProps) => {
-  return <div className={clsx(styles.wrapper, { [styles.active]: active })}>{children}</div>;
+export const FilterChip = ({ children, className, active }: FilterChipProps) => {
+  return (
+    <div className={clsx(styles.wrapper, className, { [styles.active]: active })}>{children}</div>
+  );
 };

@@ -14,7 +14,7 @@
   transition: 0.3s;
 
   &::placeholder {
-    color: var(--gray-light);
+    color: var(--placeholder-color);
   }
 
   &:focus {
@@ -28,7 +28,7 @@
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
-  color: var(--gray-light);
+  color: var(--placeholder-color);
 }
 
 .errorMessage {

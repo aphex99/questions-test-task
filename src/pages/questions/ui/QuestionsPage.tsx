@@ -1,7 +1,7 @@
+import { lazy } from "react";
 import { useSearchParams } from "react-router-dom";
 
-import { QuestionsFiltersPanel } from "@/pages/questions";
-import { useGetQuestionsQuery } from "@/pages/questions/api/questionsApi.ts";
+import { useGetQuestionsQuery } from "@/pages/questions";
 import { COUNT_PER_PAGE } from "@/pages/questions/config/consts.ts";
 
 import { QuestionsList } from "@/widgets";
@@ -10,10 +10,13 @@ import { getErrorMessage } from "@/shared/lib/errors";
 import { useAppSelector } from "@/shared/lib/redux";
 import { selectQuestionsFilters } from "@/shared/model/questionsFilters/model";
 import { ErrorMessage } from "@/shared/ui";
+import { SkeletonQuestionsPage } from "@/shared/ui/skeletons/skeleton-questions-page";
 
 import styles from "./QuestionsPage.module.scss";
 
-export const QuestionsPage = () => {
+const QuestionsFiltersPanel = lazy(() => import("./questions-filters-panel"));
+
+const QuestionsPage = () => {
   const filters = useAppSelector(selectQuestionsFilters);
 
   const [searchParams, setSearchParams] = useSearchParams();
@@ -22,7 +25,7 @@ export const QuestionsPage = () => {
   const { data, error, isLoading, refetch } = useGetQuestionsQuery({ ...filters, page });
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <SkeletonQuestionsPage />;
   }
 
   if (error) {
@@ -56,3 +59,5 @@ export const QuestionsPage = () => {
     </section>
   );
 };
+
+export default QuestionsPage;

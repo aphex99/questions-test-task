@@ -50,7 +50,7 @@ const QuestionCard = ({
               <DotsVerticalIcon />
             </Button>
           </div>
-          <ImageWrapper src={imageSrc} title={title} />
+          <ImageWrapper src={imageSrc} title={title} className={styles.questionImage} />
           <div
             className={styles.shortAnswer}
             dangerouslySetInnerHTML={{ __html: shortAnswer }}

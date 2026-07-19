@@ -1,1 +1,1 @@
-export { QuestionsFiltersPanel } from "./QuestionsFiltersPanel.tsx";
+export { default } from "./QuestionsFiltersPanel.tsx";

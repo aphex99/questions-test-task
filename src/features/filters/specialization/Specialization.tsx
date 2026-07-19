@@ -6,6 +6,7 @@ import { getErrorMessage } from "@/shared/lib/errors";
 import { useAppDispatch, useAppSelector } from "@/shared/lib/redux";
 import { selectSpecializationId, setSpecialization } from "@/shared/model/questionsFilters/model";
 import { Button, ErrorMessage, FilterChip } from "@/shared/ui";
+import { SkeletonFilterChips } from "@/shared/ui/skeletons/skeleton-filter-chips";
 
 import { useGetSpecializationsQuery } from "./api/specializationsApi.ts";
 
@@ -15,7 +16,7 @@ interface SpecializationProps {
   resetPage: () => void;
 }
 
-export const Specialization = ({ resetPage }: SpecializationProps) => {
+const Specialization = ({ resetPage }: SpecializationProps) => {
   const specializationId = useAppSelector(selectSpecializationId);
   const dispatch = useAppDispatch();
 
@@ -23,7 +24,7 @@ export const Specialization = ({ resetPage }: SpecializationProps) => {
   const { data, error, isLoading, refetch } = useGetSpecializationsQuery();
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <SkeletonFilterChips />;
   }
 
   if (error) {
@@ -49,7 +50,9 @@ export const Specialization = ({ resetPage }: SpecializationProps) => {
                 className={styles.chipButton}
                 onClick={() => onSetSpecialization(spec.id)}
               >
-                <FilterChip active={specializationId === spec.id}>{spec.title}</FilterChip>
+                <FilterChip className={styles.filterChip} active={specializationId === spec.id}>
+                  {spec.title}
+                </FilterChip>
               </Button>
             ))}
           </ul>
@@ -61,3 +64,4 @@ export const Specialization = ({ resetPage }: SpecializationProps) => {
     </div>
   );
 };
+export default Specialization;

@@ -15,7 +15,7 @@
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 12px;
+  gap: 8px;
   overflow: hidden;
   width: 100%;
   max-height: 192px;
@@ -26,6 +26,12 @@
 
 .chipButton {
   background-color: transparent;
+}
+
+.filterChip {
+  &:hover {
+    border-color: var(--active-color);
+  }
 }
 
 .expanded {
