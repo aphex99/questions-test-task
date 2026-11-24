@@ -1,4 +1,3 @@
-import { Logo, LogoText } from "@/shared/assets";
 import { Button } from "@/shared/ui";
 
 import { HEADER_MENU_ITEMS } from "./config/headerMenuItems.ts";
@@ -10,10 +9,6 @@ const Header = () => {
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <div className={styles.logoAndMenu}>
-          <a href={"/"} className={styles.logoContainer}>
-            <Logo />
-            <LogoText />
-          </a>
           <nav>
             <ul className={styles.navList}>
               {HEADER_MENU_ITEMS.map((item) => (
