@@ -1,9 +1,9 @@
-import { SkillIcon } from "@/features/filters/skill/ui/skill-icon";
+import {SkillIcon} from "@/features/filters/skill/ui/skill-icon";
 
-import type { Skill } from "@/shared/types";
-import { CardWrapper, FilterChip, ImageWrapper, LabelsGroup } from "@/shared/ui";
+import type {Skill} from "@/shared/types";
+import {CardWrapper, FilterChip, LabelsGroup} from "@/shared/ui";
 
-import { socialLinks } from "../../config/socialLinks.ts";
+import {socialLinks} from "../../config/socialLinks.ts";
 
 import styles from "./QuestionPageSidePanel.module.scss";
 
@@ -16,12 +16,11 @@ interface QuestionPageSidePanelProps {
 }
 
 export const QuestionPageSidePanel = ({
-  complexity,
-  keywords,
-  questionSkills,
-  rate,
-  username,
-}: QuestionPageSidePanelProps) => {
+                                        complexity,
+                                        keywords,
+                                        questionSkills,
+                                        rate,
+                                      }: QuestionPageSidePanelProps) => {
   return (
     <div className={styles.sidePanel}>
       <CardWrapper className={styles.cardWrapper}>
@@ -40,7 +39,7 @@ export const QuestionPageSidePanel = ({
             {questionSkills.map((skill) => (
               <li key={skill.id}>
                 <FilterChip active={true}>
-                  <SkillIcon title={skill.title} src={skill.imageSrc} />
+                  <SkillIcon title={skill.title} src={skill.imageSrc}/>
                   <span>{skill.title}</span>
                 </FilterChip>
               </li>
@@ -57,25 +56,13 @@ export const QuestionPageSidePanel = ({
             ))}
           </ul>
         </div>
-        <div className={styles.authorWrapper}>
-          <span>Автор: </span>
-          <span className={styles.author}>{username}</span>
-        </div>
       </CardWrapper>
       <CardWrapper active={true}>
         <div className={styles.adWrapper}>
-          <div className={styles.profileInfo}>
-            <ImageWrapper title={"Avatar image"} src={""} className={styles.avatar} avatar={true} />
-            <div className={styles.nameWrapper}>
-              <span>Руслан Куянец</span>
-              <span className={styles.occupation}>Python Guru</span>
-            </div>
-          </div>
-          <p>Guru - это эксперты YeaHub, которые помогают развивать комьюнити.</p>
           <ul className={styles.socialLinks}>
-            {socialLinks.map(({ id, Icon }) => (
+            {socialLinks.map(({id, Icon}) => (
               <li key={id} className={styles.socialItem}>
-                <Icon />
+                <Icon/>
               </li>
             ))}
           </ul>
